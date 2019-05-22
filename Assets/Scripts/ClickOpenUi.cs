@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class ClickOpenUi : MonoBehaviour
 {
+    // Gameobject das instanziert werden soll wird ausgewählt und die Position des Objects gemerkt
     [SerializeField] public GameObject myPrefab;
     private Vector3 posUp;
+    private bool menuOpen = false;
+    private GameObject test;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Aktuelle Position + ein bisschen nach oben speichern
         posUp = transform.position;
         posUp.y += 2.0f;
       
@@ -18,10 +22,21 @@ public class ClickOpenUi : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+
     void OnMouseDown()
     {
-        // Instantiate at position (0, 0, 0) and zero rotation.
-        Instantiate(myPrefab, posUp, Quaternion.identity);
+        // Instanzieren (was, wo, ?)
+        if(menuOpen == false)
+        {
+            
+            myPrefab = (GameObject) Instantiate(myPrefab, posUp, Quaternion.identity);
+            menuOpen = true;
+        }
+        else if (menuOpen == true)
+        {
+            Destroy(myPrefab);
+            menuOpen = false;
+        }
+       
     }
 }
