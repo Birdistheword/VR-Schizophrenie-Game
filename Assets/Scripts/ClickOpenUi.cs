@@ -8,10 +8,8 @@ public class ClickOpenUi : MonoBehaviour
     // Gameobject das instanziert werden soll wird ausgewählt und die Position des Objects gemerkt
     [SerializeField] public GameObject myPrefab;
     private Vector3 posUp;
-    private bool menuOpen = false;
-    private GameObject test;
+    private int menuOpen = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         // Aktuelle Position + ein bisschen nach oben speichern
@@ -22,21 +20,28 @@ public class ClickOpenUi : MonoBehaviour
         
     }
 
-
     void OnMouseDown()
     {
-        // Instanzieren (was, wo, ?)
-        if(menuOpen == false)
+        // Beim ERSTEN Click das Menü erstellen
+        // Beim ZWEITEN Click das Menü DEactivaten
+        // BEim DRITTEN CLick das Menü activaten
+        if(menuOpen == 0)
         {
             
-            myPrefab = (GameObject) Instantiate(myPrefab, posUp, Quaternion.identity);
-            menuOpen = true;
+            myPrefab = (GameObject) Instantiate(myPrefab, posUp ,Quaternion.identity);
+            menuOpen = 1;
         }
-        else if (menuOpen == true)
+        else if (menuOpen == 1)
         {
-            Destroy(myPrefab);
-            menuOpen = false;
+            myPrefab.transform.gameObject.SetActive(false);
+            menuOpen = 2;
         }
-       
+        else if (menuOpen == 2)
+        {
+            myPrefab.transform.gameObject.SetActive(true);
+            menuOpen = 1;
+
+        }
+
     }
 }
