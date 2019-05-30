@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class changeSize : MonoBehaviour
+public class ChangeSize : MonoBehaviour
 
 {
     public GameObject cube;
