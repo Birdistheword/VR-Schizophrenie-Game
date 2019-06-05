@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseXInputName: Mouse X
   mouseYInputName: Mouse Y
-  mouseSensitivity: 70
+  mouseSensitivity: 80
   playerBody: {fileID: 5589102804324697110}
 --- !u!1 &4157552595878414879
 GameObject:
@@ -112,8 +112,8 @@ GameObject:
   - component: {fileID: 5599754364843241398}
   - component: {fileID: 6875173142257345284}
   - component: {fileID: 1031367068831033729}
-  - component: {fileID: 2128206200400729352}
-  - component: {fileID: 6375758871075898934}
+  - component: {fileID: 3325150476244370167}
+  - component: {fileID: 2121865164933770217}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -195,7 +195,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2128206200400729352
+--- !u!114 &3325150476244370167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInputName: Horizontal
   verticalInputName: Vertical
-  movementSpeed: 5
+  movementSpeed: 7
   jumpFallOff:
     serializedVersion: 2
     m_Curve:
@@ -236,7 +236,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMultiplier: 5
   jumpKey: 32
---- !u!143 &6375758871075898934
+--- !u!143 &2121865164933770217
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

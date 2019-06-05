@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: a5136f2e6b97bb4449adef175fddde9d
   - enabled: 1
-    path: Assets/Scenes/Multiplayer TEST.unity
-    guid: d784e5c581e0af9408597dfab589d71d
+    path: Assets/Scenes/Main_Kerstin.unity
+    guid: 8e52006820c548445a4de348c7e802e8
   m_configObjects: {}
