@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SendEvent : MonoBehaviour
 {
-    public GameObject player;
+    public CharacterController player;
     public GameObject targetObject;
     private bool trigger;
 
@@ -15,9 +15,10 @@ public class SendEvent : MonoBehaviour
     }
     private void OnTriggerEnter (Collider col)
     {
+        if (col == player) Debug.Log("Col ist player");
         trigger = true;
         targetObject.SendMessage("messageReceiver", trigger);
-        Debug.Log("EventSentEnter");
+        Debug.Log(col);
         
     }
     private void OnTriggerExit(Collider col)
