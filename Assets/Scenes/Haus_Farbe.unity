@@ -352,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 561799450}
   playerCam: {fileID: 1142784664}
-  throwForce: 40
+  throwForce: 500
 --- !u!54 &1390768689
 Rigidbody:
   m_ObjectHideFlags: 0
