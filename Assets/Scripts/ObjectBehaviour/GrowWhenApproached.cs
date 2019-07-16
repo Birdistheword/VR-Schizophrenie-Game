@@ -8,7 +8,8 @@ public class GrowWhenApproached : MonoBehaviour
     public Vector3 maxScale;
     private Vector3 minScale;
     private Vector3 grow;
-    
+    private float distance;
+   
     public int DistanceToStartGrowing;
 
 
@@ -20,13 +21,13 @@ public class GrowWhenApproached : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(gameObject.transform.position, player.position);
+        distance = Vector3.Distance(gameObject.transform.position, player.position);
 
         if (distance <= DistanceToStartGrowing && distance != 0)
         {
             float scale = (1 / distance) * 5;
             grow = new Vector3(scale, scale, scale);
-            if (grow.x <= maxScale.x) transform.localScale = grow;
+            if (grow.x < maxScale.x && grow.x >=minScale.x) transform.localScale = grow;
         }
 
     }
