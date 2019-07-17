@@ -637,7 +637,7 @@ AudioSource:
   Priority: 199
   DopplerLevel: 1
   MinDistance: 1.2664027
-  MaxDistance: 6.3901205
+  MaxDistance: 4.7139816
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -15166,7 +15166,7 @@ VideoPlayer:
   m_DirectAudioVolumes:
   - 0.218
   m_Url: 
-  m_EnabledAudioTracks: 01
+  m_EnabledAudioTracks: 00
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
