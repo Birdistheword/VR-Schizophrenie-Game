@@ -6,6 +6,9 @@ public class ThrowObject : MonoBehaviour
     public Transform player;
     public Transform playerCam;
     public float throwForce = 10;
+    public GameObject target;
+    public Transform sameTarget;
+    public float closestRangeToDrop;
     bool hasPlayer = false;
     bool beingCarried = false;
     private bool touched = false;
@@ -13,8 +16,9 @@ public class ThrowObject : MonoBehaviour
 
     void Update()
     {
-        float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 2.5f)
+        float distance = Vector3.Distance(gameObject.transform.position, player.position);
+        float distanceToTarget = Vector3.Distance(gameObject.transform.position, sameTarget.position);
+        if (distance <= 2.5f)
         {
             hasPlayer = true;
         }
@@ -51,6 +55,7 @@ public class ThrowObject : MonoBehaviour
                 transform.parent = null;
                 beingCarried = false;
             }
+            
         }
     }
     
@@ -61,4 +66,15 @@ public class ThrowObject : MonoBehaviour
             touched = true;
         }
     }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject == target)
+        {
+            ContactPoint contact = col.contacts[0];
+            Vector3 pos = contact.point;
+            GetComponent<Rigidbody>().isKinematic = true;
+            transform.parent = sameTarget;
+        }
+    }
+
 }
