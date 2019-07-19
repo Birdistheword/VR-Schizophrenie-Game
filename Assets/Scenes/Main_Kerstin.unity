@@ -8172,6 +8172,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
+--- !u!1 &992250843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992250847}
+  - component: {fileID: 992250846}
+  - component: {fileID: 992250845}
+  - component: {fileID: 992250844}
+  m_Layer: 0
+  m_Name: SzenenWechsel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &992250844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992250843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392debe809a5cfb46a88dd7a89ac1ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadLevel: Traumwelt
+--- !u!65 &992250845
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992250843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.2951555, z: 1}
+  m_Center: {x: 0, y: 0.65123105, z: -0}
+--- !u!33 &992250846
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992250843}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &992250847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992250843}
+  m_LocalRotation: {x: -0, y: 0.012448007, z: -0, w: 0.9999225}
+  m_LocalPosition: {x: 0.613, y: -2.173, z: -7.356}
+  m_LocalScale: {x: 12.174, y: 1, z: -4.1234}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 1.4260001, z: 0}
 --- !u!65 &995856017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19694,6 +19761,11 @@ PrefabInstance:
     - target: {fileID: 870460179060248991, guid: 643f16fd2058ebf45861ae65a2300610,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 870460179060248991, guid: 643f16fd2058ebf45861ae65a2300610,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 870460179060248977, guid: 643f16fd2058ebf45861ae65a2300610,

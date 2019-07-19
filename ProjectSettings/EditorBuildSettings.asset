@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_Kerstin.unity
     guid: 8e52006820c548445a4de348c7e802e8
+  - enabled: 1
+    path: Assets/Scenes/Traumwelt.unity
+    guid: 78e0d80ef410bea4eb8d37821502dcea
   m_configObjects: {}
