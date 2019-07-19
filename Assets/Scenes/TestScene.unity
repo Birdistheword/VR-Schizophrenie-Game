@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 1390768688}
   - component: {fileID: 1390768689}
   - component: {fileID: 1390768690}
+  - component: {fileID: 1390768691}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -354,6 +355,9 @@ MonoBehaviour:
   player: {fileID: 561799450}
   playerCam: {fileID: 1142784664}
   throwForce: 500
+  target: {fileID: 97457834}
+  sameTarget: {fileID: 97457839}
+  closestRangeToDrop: 0
 --- !u!54 &1390768689
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -380,6 +384,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2274c4358dd2ff347b680877f1eb7ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 97457834}
+  sameTarget: {fileID: 97457839}
+  closestRangeToDrop: 0
+--- !u!114 &1390768691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390768683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf735b542972ab4f9bd56a96983245a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 97457834}
