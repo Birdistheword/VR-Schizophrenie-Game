@@ -386,11 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16ae42c19ae60e46b4928254e20f737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209304698}
-  playerCam: {fileID: 1960746408}
   throwForce: 500
   target: {fileID: 704972179}
-  sameTarget: {fileID: 704972183}
   closestRangeToDrop: 0
 --- !u!65 &44908125
 BoxCollider:
@@ -1380,11 +1377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16ae42c19ae60e46b4928254e20f737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209304698}
-  playerCam: {fileID: 1960746408}
   throwForce: 500
   target: {fileID: 704972179}
-  sameTarget: {fileID: 704972183}
   closestRangeToDrop: 0
 --- !u!114 &135765583
 MonoBehaviour:
@@ -1960,11 +1954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4518dedd76e7747afd6c42fc60e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209304698}
-  playerCam: {fileID: 1960746408}
-  throwForce: 300
   target: {fileID: 85444984}
-  sameTarget: {fileID: 85444986}
+  throwForce: 300
   closestRangeToDrop: 0
 --- !u!65 &193636121
 BoxCollider:
@@ -7149,7 +7140,6 @@ GameObject:
   - component: {fileID: 913596732}
   - component: {fileID: 913596731}
   - component: {fileID: 913596730}
-  - component: {fileID: 913596729}
   m_Layer: 0
   m_Name: Pfeil2
   m_TagString: Untagged
@@ -7176,21 +7166,6 @@ Transform:
   m_Father: {fileID: 5006512734939788630}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -69.189, y: -49.272003, z: 90.00001}
---- !u!114 &913596729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913596727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2274c4358dd2ff347b680877f1eb7ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 704972179}
-  sameTarget: {fileID: 704972183}
-  closestRangeToDrop: 0
 --- !u!114 &913596730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7203,12 +7178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16ae42c19ae60e46b4928254e20f737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209304698}
-  playerCam: {fileID: 1960746408}
   throwForce: 500
   target: {fileID: 704972179}
-  sameTarget: {fileID: 704972183}
-  closestRangeToDrop: 0
+  closestRangeToDrop: 6
 --- !u!65 &913596731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15572,11 +15544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4518dedd76e7747afd6c42fc60e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209304698}
-  playerCam: {fileID: 1960746408}
-  throwForce: 500
   target: {fileID: 200581666}
-  sameTarget: {fileID: 200581667}
+  throwForce: 500
   closestRangeToDrop: 0
 --- !u!54 &1389850821
 Rigidbody:
@@ -18000,8 +17969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba449968e1c0b8244a17abfd15c192f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209304698}
   maxScale: {x: 3, y: 3, z: 3}
+  grow: {x: 0, y: 0, z: 0}
   DistanceToStartGrowing: 3
 --- !u!65 &1747055242
 BoxCollider:
@@ -18567,11 +18536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab4518dedd76e7747afd6c42fc60e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1209304698}
-  playerCam: {fileID: 1960746408}
-  throwForce: 300
   target: {fileID: 85444984}
-  sameTarget: {fileID: 85444986}
+  throwForce: 300
   closestRangeToDrop: 0
 --- !u!54 &1797430651
 Rigidbody:
@@ -19838,14 +19804,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.65942
       objectReference: {fileID: 0}
+    - target: {fileID: 870460179464265210, guid: 643f16fd2058ebf45861ae65a2300610,
+        type: 3}
+      propertyPath: m_Name
+      value: playerCam
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643f16fd2058ebf45861ae65a2300610, type: 3}
---- !u!4 &1960746408 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 870460179464265215, guid: 643f16fd2058ebf45861ae65a2300610,
-    type: 3}
-  m_PrefabInstance: {fileID: 1960746407}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1961943686
 PrefabInstance:
   m_ObjectHideFlags: 0
