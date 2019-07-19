@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GrowWhenApproached : MonoBehaviour
 {
-    public Transform player;
+    private GameObject player;
     public Vector3 maxScale;
     private Vector3 minScale;
-    private Vector3 grow;
+    public Vector3 grow;
     private float distance;
 
     public int DistanceToStartGrowing;
@@ -17,16 +17,18 @@ public class GrowWhenApproached : MonoBehaviour
     void Start()
     {
         minScale = transform.localScale;
+        player = GameObject.Find("Player");
+        
     }
 
     void Update()
     {
-        distance = Vector3.Distance(gameObject.transform.position, player.position);
+        distance = Vector3.Distance(gameObject.transform.position, player.transform.position);
 
         if (distance <= DistanceToStartGrowing && distance != 0)
         {
             float scale = (1 / distance) * 5;
-            grow = new Vector3(scale, scale, scale);
+            grow = new Vector3(scale, grow.y, scale);
             if (grow.x < maxScale.x && grow.x >= minScale.x) transform.localScale = grow;
         }
 
