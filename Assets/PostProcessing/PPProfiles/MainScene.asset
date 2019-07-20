@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3693882682258719970
+--- !u!114 &-7186948160995395896
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18,19 +18,19 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 25.81
+    value: 10.3
   threshold:
     overrideState: 1
-    value: 1.02
+    value: 0.8
   softKnee:
-    overrideState: 1
-    value: 0.37
-  clamp:
     overrideState: 0
+    value: 0.5
+  clamp:
+    overrideState: 1
     value: 65472
   diffusion:
-    overrideState: 1
-    value: 5.38
+    overrideState: 0
+    value: 7
   anamorphicRatio:
     overrideState: 0
     value: 0
@@ -41,66 +41,13 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   dirtTexture:
-    overrideState: 1
-    value: {fileID: 2800000, guid: 9660a4ca1ca8425408ac25c641932977, type: 3}
+    overrideState: 0
+    value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
-    overrideState: 1
-    value: 13.27
---- !u!114 &-3314433390594899484
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
-  m_Name: LensDistortion
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 39
-  intensityX:
-    overrideState: 0
-    value: 1
-  intensityY:
-    overrideState: 0
-    value: 1
-  centerX:
     overrideState: 0
     value: 0
-  centerY:
-    overrideState: 0
-    value: 0
-  scale:
-    overrideState: 1
-    value: 1.14
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Traumwelt
-  m_EditorClassIdentifier: 
-  settings:
-  - {fileID: -3693882682258719970}
-  - {fileID: 1984683602514998648}
-  - {fileID: 1973870911851872652}
-  - {fileID: 5596187010507141281}
-  - {fileID: -3314433390594899484}
-  - {fileID: 4778885540212907440}
---- !u!114 &1973870911851872652
+--- !u!114 &-2965080083314496126
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,10 +100,10 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 30
+    value: 7
   tint:
     overrideState: 0
-    value: 0
+    value: -42
   colorFilter:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -164,8 +111,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   saturation:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 11
   brightness:
     overrideState: 0
     value: 0
@@ -177,13 +124,13 @@ MonoBehaviour:
     value: 0
   mixerRedOutRedIn:
     overrideState: 1
-    value: 116
+    value: 113
   mixerRedOutGreenIn:
     overrideState: 1
-    value: 25
+    value: -5
   mixerRedOutBlueIn:
     overrideState: 1
-    value: 25
+    value: -8
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
@@ -1411,7 +1358,26 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
---- !u!114 &1984683602514998648
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
+  m_Name: MainScene
+  m_EditorClassIdentifier: 
+  settings:
+  - {fileID: -2965080083314496126}
+  - {fileID: -7186948160995395896}
+  - {fileID: 1272449463803071418}
+  - {fileID: 6077494901941105452}
+  - {fileID: 4355630906455289799}
+  - {fileID: 2526748223994440681}
+--- !u!114 &1272449463803071418
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1433,11 +1399,33 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.607
+    value: 1
   fastMode:
     overrideState: 0
     value: 0
---- !u!114 &4778885540212907440
+--- !u!114 &2526748223994440681
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  shutterAngle:
+    overrideState: 1
+    value: 188
+  sampleCount:
+    overrideState: 0
+    value: 10
+--- !u!114 &4355630906455289799
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1457,14 +1445,14 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   color:
-    overrideState: 1
+    overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
   center:
     overrideState: 0
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.41
+    value: 0.355
   smoothness:
     overrideState: 0
     value: 0.2
@@ -1481,7 +1469,7 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
---- !u!114 &5596187010507141281
+--- !u!114 &6077494901941105452
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1490,22 +1478,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
-  m_Name: Grain
+  m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
+  m_Name: LensDistortion
   m_EditorClassIdentifier: 
   active: 1
   enabled:
     overrideState: 1
     value: 1
-  colored:
-    overrideState: 0
-    value: 1
   intensity:
     overrideState: 1
-    value: 0.212
-  size:
-    overrideState: 1
-    value: 0.43
-  lumContrib:
-    overrideState: 1
-    value: 0.254
+    value: 54
+  intensityX:
+    overrideState: 0
+    value: 1
+  intensityY:
+    overrideState: 0
+    value: 1
+  centerX:
+    overrideState: 0
+    value: 0
+  centerY:
+    overrideState: 0
+    value: 0
+  scale:
+    overrideState: 0
+    value: 1
