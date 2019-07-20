@@ -6,6 +6,7 @@ public class ThrowObject : MonoBehaviour
     public GameObject target;
     public float throwForce = 10;
     public float closestRangeToDrop;
+    GameObject StateHandler;
 
     private Transform player;
     private Transform playerCam;
@@ -18,8 +19,8 @@ public class ThrowObject : MonoBehaviour
 
     void Start()
     {
-        
 
+        StateHandler = GameObject.Find("StateHandler");
         player = GameObject.Find("Player").transform;
         playerCam = GameObject.Find("PlayerCam").transform;
 
@@ -51,10 +52,7 @@ public class ThrowObject : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         transform.parent = playerCam;
         beingCarried = true;
-        for (int i = 0; i <= otherGameObjects.Length; ++i)
-        {
-            Debug.Log(otherGameObjects[i]);
-        }
+        StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = true;
     }
 
     private void Carried()
@@ -79,7 +77,8 @@ public class ThrowObject : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
             beingCarried = false;
-        }    
+        }
+        if (beingCarried == false) StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
     }
 
     
