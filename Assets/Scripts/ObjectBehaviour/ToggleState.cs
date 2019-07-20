@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class ToggleState : MonoBehaviour
 {
     GameObject StateHandler;
-    public Animation anim;
-    [SerializeField] string triggerAnimationName;
+    private Animator anim;
     [SerializeField] string stateBoolName;
 
     void Start()
     {
-        anim = GetComponent<Animation>();
-        StateHandler = GameObject.Find("StateHandler");                
+
+        StateHandler = GameObject.Find("StateHandler");
+        anim = gameObject.GetComponent<Animator>();
     }
-    void Update()
-    {
-        if (!anim.IsPlaying(triggerAnimationName))
-        {
-            StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName] = true;
-            Debug.Log(StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName]);
-        }
+
+    public void toggleState()
+    {       
+        StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName] = true;
+        Debug.Log("Hallo Silviiii");
+        Debug.Log(StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName]);
     }
+    
 }

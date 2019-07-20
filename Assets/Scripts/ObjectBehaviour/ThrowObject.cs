@@ -3,9 +3,7 @@ using System.Collections;
 
 public class ThrowObject : MonoBehaviour
 {
-    public GameObject target;
     public float throwForce = 10;
-    public float closestRangeToDrop;
     GameObject StateHandler;
 
     private Transform player;
@@ -29,9 +27,6 @@ public class ThrowObject : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(gameObject.transform.position, player.position);
-        float distanceToTarget = Vector3.Distance(gameObject.transform.position, target.transform.position);
-
-
         if (distance <= 2.5f)
         {
             hasPlayer = true;
@@ -88,19 +83,6 @@ public class ThrowObject : MonoBehaviour
         if (beingCarried)
         {
             touched = true;
-        }
-    }
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject == target)
-        {
-            ContactPoint contact = col.contacts[0];
-            Vector3 pos = contact.point;
-            GetComponent<Rigidbody>().isKinematic = true;
-            transform.parent = target.transform;
-            transform.position = col.transform.position;
-            
-            
         }
     }
 

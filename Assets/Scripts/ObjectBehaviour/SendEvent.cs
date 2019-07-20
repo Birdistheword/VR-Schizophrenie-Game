@@ -7,8 +7,8 @@ public class SendEvent : MonoBehaviour
     public string stateBoolName;
     GameObject player;
     GameObject StateHandler;
-    public Animator anim;
-    [SerializeField] string animationName;
+    Animator anim;
+    [SerializeField] string animationToBePlayed;
     public GameObject targetObject;
     bool trigger;
     float distanceToTarget;
@@ -36,7 +36,7 @@ public class SendEvent : MonoBehaviour
         {
             if (StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName].Equals(true))
             {
-                anim.Play(animationName);
+                anim.Play(animationToBePlayed);
                 Debug.Log("Contains Key:" + stateBoolName + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName]);
             }
         }

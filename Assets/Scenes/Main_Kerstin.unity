@@ -4509,6 +4509,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2010574591}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &680826797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680826796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47625de3c751bb549949f591b054929d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  stateBoolName: waterInBowl
+--- !u!114 &680826798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680826796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e880d292a887e4eb49e71d69f977a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateBoolName: 
+  anim: {fileID: 0}
+  animationName: 
+  targetObject: {fileID: 0}
 --- !u!95 &680826801
 Animator:
   serializedVersion: 3
@@ -20428,7 +20458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873591708637212, guid: 081b6a4b7fb1def4eb9bedf51f1d1311, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6677
+      value: 3.659
       objectReference: {fileID: 0}
     - target: {fileID: 4873591708637212, guid: 081b6a4b7fb1def4eb9bedf51f1d1311, type: 3}
       propertyPath: m_LocalPosition.y
