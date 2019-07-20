@@ -7,7 +7,7 @@ public class ToggleState : MonoBehaviour
 {
     GameObject StateHandler;
     private Animator anim;
-    [SerializeField] string stateBoolName;
+    [SerializeField] string boolToSet;
 
     void Start()
     {
@@ -17,10 +17,13 @@ public class ToggleState : MonoBehaviour
     }
 
     public void toggleState()
-    {       
-        StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName] = true;
-        Debug.Log("Hallo Silviiii");
-        Debug.Log(StateHandler.GetComponent<StateHandler>().AllBools[stateBoolName]);
+    {
+        if (StateHandler.GetComponent<StateHandler>().AllBools.ContainsKey(boolToSet))
+        {
+            StateHandler.GetComponent<StateHandler>().AllBools[boolToSet] = true;
+            Debug.Log(boolToSet + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet]);
+        }
+        else Debug.Log("State " + boolToSet + " nicht gefunden! ERROR");
     }
     
 }

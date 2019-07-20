@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 1390768684}
   - component: {fileID: 1390768689}
   - component: {fileID: 1390768688}
+  - component: {fileID: 1390768690}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -376,6 +377,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1390768690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390768683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c275bb58c441f7f4d81b09c01250fe24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolToCheck: waterInTub
+  boolToSet: waterInCup
+  targetObject: {fileID: 1787442130}
 --- !u!1 &1556189160
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47625de3c751bb549949f591b054929d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateBoolName: waterInTub
+  boolToSet: waterInTub
 --- !u!65 &1787442132
 BoxCollider:
   m_ObjectHideFlags: 0

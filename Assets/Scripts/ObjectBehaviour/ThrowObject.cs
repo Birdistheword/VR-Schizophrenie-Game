@@ -43,7 +43,6 @@ public class ThrowObject : MonoBehaviour
 
     private void PickUp()
     {
-        var otherGameObjects = FindObjectsOfType<ThrowObject>();
         GetComponent<Rigidbody>().isKinematic = true;
         transform.parent = playerCam;
         beingCarried = true;
@@ -52,19 +51,21 @@ public class ThrowObject : MonoBehaviour
 
     private void Carried()
     {
-        if (touched)
+       /* if (touched)
         {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
             beingCarried = false;
             touched = false;
-        }
+            StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
+        }*/
         if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
             beingCarried = false;
             GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+            StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
 
         }
         else if (Input.GetMouseButtonDown(1))
@@ -72,8 +73,8 @@ public class ThrowObject : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
             beingCarried = false;
+            StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
         }
-        if (beingCarried == false) StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
     }
 
     
