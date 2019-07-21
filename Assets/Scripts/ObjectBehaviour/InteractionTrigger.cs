@@ -4,38 +4,63 @@ using UnityEngine;
 
 public class InteractionTrigger : MonoBehaviour
 {
-    public string boolToCheck;
-    public string boolToSet;
-    public GameObject targetObject;
+    public string[] boolToCheck, boolToSet;
+    public GameObject[] targetObject;
     GameObject player;
     GameObject StateHandler;
     float distanceToTarget = 100f;
+    int counter = 0;
+    bool success = false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         StateHandler = GameObject.Find("StateHandler");
+        
     }
 
     void Update()
     {
         // Distanz zum gewünschten Objekt messen
-         distanceToTarget = Vector3.Distance(gameObject.transform.position, targetObject.transform.position);
+         if(boolToCheck.Length > counter) distanceToTarget = Vector3.Distance(transform.position, targetObject[counter].transform.position);
 
         // Funktion ausführen, die State Handler prüft und updatet
-        if (Input.GetButtonDown("use")) InteractionTriggerObject();
+        if (Input.GetButtonDown("use")) HandleState();
+    }
+
+    private void HandleState()
+    {
+        if (boolToCheck.Length > counter)
+        {
+            if (StateHandler.GetComponent<StateHandler>().AllBools[boolToCheck[counter]].Equals(true))
+            {
+                // State 0 success
+                InteractionTriggerObject();
+
+                if (success == true)
+                {
+                    Debug.Log("Length of boolToCheck Array: " + boolToCheck.Length);
+                    Debug.Log("BoolToCheck:" + boolToCheck[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToCheck[counter]]);
+                    Debug.Log("BoolToSet:" + boolToSet[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet[counter]]);
+                    StateHandler.GetComponent<StateHandler>().AllBools[boolToSet[counter]] = true;
+                    counter++;
+                    success = false;
+                }
+
+            }
+        }
     }
 
     private void InteractionTriggerObject()
     {           
-        if (StateHandler.GetComponent<StateHandler>().AllBools[boolToCheck].Equals(true) && distanceToTarget <= 8f )
+        if (distanceToTarget <= 7f)
         {
+            Debug.Log("Distance to Target is smaller than 7f, success!");
             if (StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"].Equals(true))
             {
-                StateHandler.GetComponent<StateHandler>().AllBools[boolToSet] = true;
-                transform.localScale = new Vector3(2, 2, 2);
-                Debug.Log("BoolToCheck:" + boolToCheck + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToCheck]);
-                Debug.Log("BoolToSet:" + boolToSet + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet]);
+                Debug.Log("Object is in Hand, Transforming Object!");
+                transform.localScale += new Vector3(0.2F, 0.2F, 0.2F);
+                success = true;             
             }        
         }
     }

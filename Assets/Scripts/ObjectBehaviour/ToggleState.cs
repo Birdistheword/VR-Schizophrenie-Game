@@ -21,7 +21,7 @@ public class ToggleState : MonoBehaviour
         if (StateHandler.GetComponent<StateHandler>().AllBools.ContainsKey(boolToSet))
         {
             StateHandler.GetComponent<StateHandler>().AllBools[boolToSet] = true;
-            Debug.Log(boolToSet + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet]);
+            Debug.Log("ToggleState - boolToSet: " + boolToSet + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet]);
         }
         else Debug.Log("State " + boolToSet + " nicht gefunden! ERROR");
     }
