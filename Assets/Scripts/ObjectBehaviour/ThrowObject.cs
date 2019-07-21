@@ -20,7 +20,7 @@ public class ThrowObject : MonoBehaviour
 
         StateHandler = GameObject.Find("StateHandler");
         player = GameObject.Find("Player").transform;
-        playerCam = GameObject.Find("PlayerCam").transform;
+        playerCam = Camera.main.transform;
 
     }
 

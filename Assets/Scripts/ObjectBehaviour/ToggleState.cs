@@ -23,7 +23,7 @@ public class ToggleState : MonoBehaviour
             StateHandler.GetComponent<StateHandler>().AllBools[boolToSet] = true;
             Debug.Log("ToggleState - boolToSet: " + boolToSet + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet]);
         }
-        else Debug.Log("State " + boolToSet + " nicht gefunden! ERROR");
+        else Debug.Log("ToggleState - Boolean " + boolToSet + " nicht gefunden! ERROR");
     }
     
 }

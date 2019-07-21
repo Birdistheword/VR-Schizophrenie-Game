@@ -6,6 +6,7 @@ public class InteractionTrigger : MonoBehaviour
 {
     public string[] boolToCheck, boolToSet;
     public GameObject[] targetObject;
+    public AudioClip[] audioClip;
     GameObject player;
     GameObject StateHandler;
     float distanceToTarget = 100f;
@@ -43,8 +44,10 @@ public class InteractionTrigger : MonoBehaviour
                     Debug.Log("BoolToCheck:" + boolToCheck[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToCheck[counter]]);
                     Debug.Log("BoolToSet:" + boolToSet[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet[counter]]);
                     StateHandler.GetComponent<StateHandler>().AllBools[boolToSet[counter]] = true;
+                    if (audioClip[counter]) GameObject.Find("AudioHandler").SendMessage("PlaySound", audioClip[counter]);
                     counter++;
                     success = false;
+                    
                 }
 
             }
