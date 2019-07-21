@@ -12,6 +12,7 @@ public class StateHandler : MonoBehaviour
         // Eine Liste von allen Boolean Werten, die in den State Handler müssen
         AllBools.Add("waterInTub", false);
         AllBools.Add("waterInBowl", false);
+        AllBools.Add("dishWashing", false);
         AllBools.Add("allPlatesGone", false);
         AllBools.Add("objectInHand", false);
 
