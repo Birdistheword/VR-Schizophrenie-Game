@@ -7,8 +7,8 @@ public class openKitchenDoor : MonoBehaviour
 
     [SerializeField] Animator anim;
     [SerializeField] GameObject player;
-    [SerializeField] float range = 3f;
-    float distance = 100f;
+    [SerializeField] float range = 1f;
+    float distance = 25f;
     
 
     // Start is called before the first frame update
