@@ -8,6 +8,7 @@ public class ToggleState : MonoBehaviour
     GameObject StateHandler;
     private Animator anim;
     [SerializeField] string boolToSet;
+    AnimatorStateInfo animInfo;
 
     void Start()
     {
@@ -18,10 +19,13 @@ public class ToggleState : MonoBehaviour
 
     public void toggleState()
     {
+        
         if (StateHandler.GetComponent<StateHandler>().AllBools.ContainsKey(boolToSet))
         {
             StateHandler.GetComponent<StateHandler>().AllBools[boolToSet] = true;
             Debug.Log("ToggleState - boolToSet: " + boolToSet + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet]);
+            
+            
         }
         else Debug.Log("ToggleState - Boolean " + boolToSet + " nicht gefunden! ERROR");
     }
