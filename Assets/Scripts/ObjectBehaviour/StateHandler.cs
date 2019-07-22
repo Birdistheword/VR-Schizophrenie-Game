@@ -13,7 +13,7 @@ public class StateHandler : MonoBehaviour
         AllBools.Add("waterInTub", false);
         AllBools.Add("waterInBowl", false);
         AllBools.Add("dishWashing", false);
-        AllBools.Add("allPlatesGone", false);
+        //AllBools.Add("allPlatesGone", false);
         AllBools.Add("objectInHand", false);
 
     }

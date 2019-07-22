@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class openFridge : MonoBehaviour
+public class openKitchenDoor2 : MonoBehaviour
 {
 
     [SerializeField] Animator anim;
@@ -29,11 +29,11 @@ public class openFridge : MonoBehaviour
 
         if (Input.GetKeyDown("1") && distance < range)
         {
-            anim.Play("openFridge");
+            anim.Play("openKitchendoor2");
         }
         if (Input.GetKeyDown("2") && distance < range)
         {
-            anim.Play("closeFridge");
+            anim.Play("closeKitchenDoor2");
         }
     }
 }
