@@ -15,6 +15,8 @@ public class AudioHandler : MonoBehaviour
         Audio = GetComponent<AudioSource>();
         // Load all Audio Clips
         randomAudios = Resources.LoadAll<AudioClip>("TestVoices");
+        Debug.Log("ToggleState : " + Object.FindObjectOfType<ToggleState>());
+        Debug.Log("InteractionTrigger : " + Object.FindObjectOfType<InteractionTrigger>());
     }
 
     void Update()

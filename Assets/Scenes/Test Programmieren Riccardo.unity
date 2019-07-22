@@ -389,18 +389,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c275bb58c441f7f4d81b09c01250fe24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boolToCheck:
+  stateToCheck:
   - waterInTub
-  - waterInCup
-  boolToSet:
-  - waterInCup
-  - allPlatesGone
-  targetObject:
+  - waterInBowl
+  objectToCheck:
   - {fileID: 1787442130}
   - {fileID: 97457834}
-  audioClip:
-  - {fileID: 0}
-  - {fileID: 8300000, guid: bb10c0e8d24093a468045dcd6a3f5464, type: 3}
+  stateToSet:
+  - waterInBowl
+  - dishWashing
+  audioClip: []
 --- !u!1 &1556189160
 GameObject:
   m_ObjectHideFlags: 0

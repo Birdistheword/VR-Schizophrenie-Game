@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class InteractionTrigger : MonoBehaviour
 {
-    public string[] boolToCheck, boolToSet;
-    public GameObject[] targetObject;
+    public string[] stateToCheck;
+    public GameObject[] objectToCheck;
+    public string[] stateToSet;
     public AudioClip[] audioClip;
     GameObject player;
     GameObject StateHandler;
@@ -23,7 +24,7 @@ public class InteractionTrigger : MonoBehaviour
     void Update()
     {
         // Distanz zum gewünschten Objekt messen
-         if(boolToCheck.Length > counter) distanceToTarget = Vector3.Distance(transform.position, targetObject[counter].transform.position);
+         if(objectToCheck.Length > counter) distanceToTarget = Vector3.Distance(transform.position, objectToCheck[counter].transform.position);
 
         // Funktion ausführen, die State Handler prüft und updatet
         if (Input.GetButtonDown("use")) HandleState();
@@ -31,20 +32,20 @@ public class InteractionTrigger : MonoBehaviour
 
     private void HandleState()
     {
-        if (boolToCheck.Length > counter)
+        if (stateToCheck.Length > counter)
         {
-            if (StateHandler.GetComponent<StateHandler>().AllBools[boolToCheck[counter]].Equals(true))
+            if (StateHandler.GetComponent<StateHandler>().AllBools[stateToCheck[counter]].Equals(true))
             {
                 // State 0 success
                 InteractionTriggerObject();
+                Debug.Log("State Nr. " + counter + " is true");
 
                 if (success == true)
                 {
-                    Debug.Log("Length of boolToCheck Array: " + boolToCheck.Length);
-                    Debug.Log("BoolToCheck:" + boolToCheck[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToCheck[counter]]);
-                    Debug.Log("BoolToSet:" + boolToSet[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[boolToSet[counter]]);
-                    StateHandler.GetComponent<StateHandler>().AllBools[boolToSet[counter]] = true;
-                    if (audioClip[counter]) GameObject.Find("AudioHandler").SendMessage("PlaySound", audioClip[counter]);
+                    //Debug.Log("BoolToCheck:" + stateToCheck[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[stateToCheck[counter]]);
+                    //Debug.Log("BoolToSet:" + stateToSet[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[stateToSet[counter]]);
+                    StateHandler.GetComponent<StateHandler>().AllBools[stateToSet[counter]] = true;
+                    if (audioClip.Length > counter) GameObject.Find("AudioHandler").SendMessage("PlaySound", audioClip[counter]);
                     counter++;
                     success = false;
                     
@@ -58,7 +59,7 @@ public class InteractionTrigger : MonoBehaviour
     {           
         if (distanceToTarget <= 7f)
         {
-            Debug.Log("Distance to Target is smaller than 7f, success!");
+            
             if (StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"].Equals(true))
             {
                 Debug.Log("Object is in Hand, Transforming Object!");
