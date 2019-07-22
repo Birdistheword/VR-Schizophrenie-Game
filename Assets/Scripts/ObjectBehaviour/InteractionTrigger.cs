@@ -8,7 +8,6 @@ public class InteractionTrigger : MonoBehaviour
     public GameObject[] objectToCheck;
     public string[] stateToSet;
     public AudioClip[] audioClip;
-    Animator animator;
     GameObject player;
     GameObject StateHandler;
     float distanceToTarget = 100f;
@@ -39,12 +38,12 @@ public class InteractionTrigger : MonoBehaviour
             {
                 // State 0 success
                 InteractionTriggerObject();
+                Debug.Log("State Nr. " + counter + " is true");
 
                 if (success == true)
                 {
                     //Debug.Log("BoolToCheck:" + stateToCheck[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[stateToCheck[counter]]);
                     //Debug.Log("BoolToSet:" + stateToSet[counter] + " and value:" + StateHandler.GetComponent<StateHandler>().AllBools[stateToSet[counter]]);
-                   
                     StateHandler.GetComponent<StateHandler>().AllBools[stateToSet[counter]] = true;
                     if (audioClip.Length > counter) GameObject.Find("AudioHandler").SendMessage("PlaySound", audioClip[counter]);
                     counter++;
