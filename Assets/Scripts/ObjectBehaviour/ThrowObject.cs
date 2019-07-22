@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ThrowObject : MonoBehaviour
 {
-    public float throwForce = 10;
+    public float throwForce = 10f;
+    public float explosionRadius = 5f;
     GameObject StateHandler;
 
     private Transform player;
@@ -11,10 +12,10 @@ public class ThrowObject : MonoBehaviour
     bool hasPlayer = false;
     bool beingCarried = false;
     private bool touched = false;
-    
 
 
 
+   
     void Start()
     {
 
@@ -79,6 +80,8 @@ public class ThrowObject : MonoBehaviour
 
     
 
+
+
     void OnTriggerEnter()
     {
         if (beingCarried)
@@ -86,5 +89,7 @@ public class ThrowObject : MonoBehaviour
             touched = true;
         }
     }
+
+    
 
 }

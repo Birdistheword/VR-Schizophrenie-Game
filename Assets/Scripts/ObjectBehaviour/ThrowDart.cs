@@ -12,6 +12,7 @@ public class ThrowDart : MonoBehaviour
     bool beingCarried = false;
     private bool touched = false;
     private bool repel = true;
+    float distance, distanceToTarget;
 
     Transform player;
     Transform playerCam;
@@ -23,8 +24,8 @@ public class ThrowDart : MonoBehaviour
     }
     void Update()
     {
-        float distance = Vector3.Distance(gameObject.transform.position, player.position);
-        float distanceToTarget = Vector3.Distance(gameObject.transform.position, target.transform.position);
+        distance = Vector3.Distance(gameObject.transform.position, player.position);
+        distanceToTarget = Vector3.Distance(gameObject.transform.position, target.transform.position);
         if (distance <= 2.5f)
         {
             hasPlayer = true;
@@ -102,6 +103,17 @@ public class ThrowDart : MonoBehaviour
             transform.localScale = originalScale;
             repel = false;
         }
+    }
+
+
+    // Malt Sphere um Dartscheibe, wenn Pfeil selected 
+    // todo Debug Mode#
+
+    void OnDrawGizmosSelected()
+    {
+        // Display the explosion radius when selected
+        Gizmos.color = new Color(1, 1, 0, 0.75F);
+        Gizmos.DrawWireSphere(target.transform.position, closestRangeToDrop);
     }
 
 }
