@@ -15,10 +15,16 @@ public class StateHandler : MonoBehaviour
         AllBools.Add("dishWashing", false);
         AllBools.Add("allPlatesGone", false);
         AllBools.Add("objectInHand", false);
+
+        AllBools.Add("waterInEG", false);
+        AllBools.Add("waterInBowl2", false);
         AllBools.Add("waterInPot", false);
         AllBools.Add("tomatoInPot", false);
         AllBools.Add("cucumberInPot", false);
         AllBools.Add("cooking", false);
+        AllBools.Add("cookingDone", false);
+        AllBools.Add("PfeilSpawn", false);
+
     }
 
 }
