@@ -12,10 +12,8 @@ public class InteractionTrigger : MonoBehaviour
     GameObject player;
     GameObject StateHandler;
     float distanceToTarget = 100f;
-    float rangeToInteract = 2f;
     int counter = 0;
     bool success = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +37,7 @@ public class InteractionTrigger : MonoBehaviour
         {
             if (StateHandler.GetComponent<StateHandler>().AllBools[stateToCheck[counter]].Equals(true))
             {
-                // State[counter] success
+                // State 0 success
                 InteractionTriggerObject();
 
                 if (success == true)
@@ -60,7 +58,7 @@ public class InteractionTrigger : MonoBehaviour
 
     private void InteractionTriggerObject()
     {           
-        if (distanceToTarget <= rangeToInteract)
+        if (distanceToTarget <= 7f)
         {
             
             if (StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"].Equals(true))
@@ -71,12 +69,4 @@ public class InteractionTrigger : MonoBehaviour
             }        
         }
     }
-
-    void OnDrawGizmosSelected()
-    {
-        // Display the explosion radius when selected
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(objectToCheck[counter].transform.position, rangeToInteract);
-    }
-
 }
