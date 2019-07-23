@@ -33,9 +33,12 @@ public class InteractionTrigger : MonoBehaviour
 
     private void HandleState()
     {
+        // Checken, ob überhaupt noch etwas im Array ist das ausgeführt werden soll
         if (stateToCheck.Length > counter)
         {
-            if (StateHandler.GetComponent<StateHandler>().AllBools[stateToCheck[counter]].Equals(true))
+            // Checken, ob ein Object in der Hand ist
+            //if (StateHandler.GetComponent<StateHandler>().AllBools[stateToCheck[counter]].Equals(true))
+            if (GetComponent<Rigidbody>().isKinematic.Equals(true))
             {
                 // State 0 success
                 InteractionTriggerObject();

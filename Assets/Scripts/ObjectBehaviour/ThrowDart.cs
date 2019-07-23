@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThrowDart : MonoBehaviour
 {
-    public float throwForce = 10;
+    /*public float throwForce = 10;
 
     public GameObject target;
     public float closestRangeToDrop;
@@ -13,6 +13,7 @@ public class ThrowDart : MonoBehaviour
     private bool touched = false;
     private bool repel = true;
 
+
     Transform player;
     Transform playerCam;
 
@@ -20,6 +21,7 @@ public class ThrowDart : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         playerCam = GameObject.Find("PlayerCam").transform;
+        dartBehaviour = GetComponent<dartBehaviour>();
     }
     void Update()
     {
@@ -40,7 +42,7 @@ public class ThrowDart : MonoBehaviour
             beingCarried = true;
 
         }
-        DropWhenInRange(distanceToTarget);
+            DropWhenInRange(distanceToTarget);
 
         if (beingCarried) CarryHandler();
     }
@@ -103,6 +105,6 @@ public class ThrowDart : MonoBehaviour
             repel = false;
         }
     }
-
+    */
 }
 

@@ -6,12 +6,18 @@ public class ThrowObject : MonoBehaviour
     public float throwForce = 10;
     GameObject StateHandler;
 
+
     private Transform player;
     private Transform playerCam;
     bool hasPlayer = false;
-    bool beingCarried = false;
-    private bool touched = false;
     
+    private bool touched = false;
+
+
+
+    [HideInInspector] public bool beingCarried = false;
+    [HideInInspector] public enum State { onGround, inHand };
+    [HideInInspector] public State state = State.onGround;
 
 
 
@@ -27,6 +33,10 @@ public class ThrowObject : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(gameObject.transform.position, player.position);
+
+        // Bedingung 1 für Aufnehmen
+        // ToDo: Nur ein Objekt aufnehmen können. Dafür benötigt: Raycast auf Objekt, nur bei collision nehmen
+
         if (distance <= 2.5f)
         {
             hasPlayer = true;
@@ -36,17 +46,26 @@ public class ThrowObject : MonoBehaviour
             hasPlayer = false;
         }
 
+        // Bedingung 2 und 3 für aufnehmen
         if (hasPlayer && Input.GetButtonDown("use")) PickUp();
 
-        if (beingCarried) Carried();
+        if (GetComponent<dartBehaviour>() != null && state == State.inHand)
+            GetComponent<dartBehaviour>().DropWhenInRange();
+
+
+        if (state == State.inHand) Carried();
     }
 
     private void PickUp()
     {
+        Debug.Log(StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"]);
+        // Falls schon was in der Hand ist kein Pickup!
+        if (StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"].Equals(true)) return;
         GetComponent<Rigidbody>().isKinematic = true;
         transform.parent = playerCam;
         beingCarried = true;
         StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = true;
+        state = State.inHand;
     }
 
     private void Carried()
@@ -63,17 +82,17 @@ public class ThrowObject : MonoBehaviour
         {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
-            beingCarried = false;
             GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
             StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
+            state = State.onGround;
 
         }
         else if (Input.GetMouseButtonDown(1))
         {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
-            beingCarried = false;
             StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
+            state = State.onGround;
         }
     }
 
