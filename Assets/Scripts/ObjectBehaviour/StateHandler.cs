@@ -25,6 +25,10 @@ public class StateHandler : MonoBehaviour
         AllBools.Add("cookingDone", false);
         AllBools.Add("PfeilSpawn", false);
 
+        AllBools.Add("videoPlaying", false);
+        AllBools.Add("pillsTaken", false);
+        AllBools.Add("taskFinished", false);
+
     }
 
 }
