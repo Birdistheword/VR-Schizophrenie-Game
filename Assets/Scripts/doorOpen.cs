@@ -14,7 +14,7 @@ public class doorOpen : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Untagged")
+        if (other.tag == "Player")
         {
             _animator.SetBool("open", true);
         }
