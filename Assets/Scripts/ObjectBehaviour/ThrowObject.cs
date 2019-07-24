@@ -35,7 +35,6 @@ public class ThrowObject : MonoBehaviour
         float distance = Vector3.Distance(gameObject.transform.position, player.position);
 
         // Bedingung 1 für Aufnehmen
-        // ToDo: Nur ein Objekt aufnehmen können. Dafür benötigt: Raycast auf Objekt, nur bei collision nehmen
 
         if (distance <= 2.5f)
         {
@@ -63,7 +62,7 @@ public class ThrowObject : MonoBehaviour
         if (StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"].Equals(true)) return;
         GetComponent<Rigidbody>().isKinematic = true;
         transform.parent = playerCam;
-        beingCarried = true;
+        transform.localPosition = new Vector3(0F, 0F, 2.2F);
         StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = true;
         state = State.inHand;
     }
@@ -98,12 +97,12 @@ public class ThrowObject : MonoBehaviour
 
     
 
-    void OnTriggerEnter()
+    /*void OnTriggerEnter()
     {
         if (beingCarried)
         {
             touched = true;
         }
-    }
+    }*/
 
 }

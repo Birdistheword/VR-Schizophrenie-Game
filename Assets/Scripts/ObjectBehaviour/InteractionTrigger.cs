@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(ThrowObject))]
+[RequireComponent(typeof(Rigidbody))]
 public class InteractionTrigger : MonoBehaviour
 {
     public string[] stateToCheck;
