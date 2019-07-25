@@ -27,7 +27,10 @@ public class StateHandler : MonoBehaviour
 
         AllBools.Add("videoPlaying", false);
         AllBools.Add("pillsTaken", false);
+        AllBools.Add("rightVideoWatched", false);
         AllBools.Add("taskFinished", false);
+        AllBools.Add("arrowHitCount", 0);
+        AllBools.Add("allArrowsHit", false);
 
     }
 

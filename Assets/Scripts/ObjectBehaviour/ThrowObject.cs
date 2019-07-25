@@ -57,7 +57,6 @@ public class ThrowObject : MonoBehaviour
 
     private void PickUp()
     {
-        Debug.Log(StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"]);
         // Falls schon was in der Hand ist kein Pickup!
         if (StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"].Equals(true)) return;
         GetComponent<Rigidbody>().isKinematic = true;

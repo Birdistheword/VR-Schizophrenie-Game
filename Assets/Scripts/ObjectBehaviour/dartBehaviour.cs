@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(ThrowObject))]
+
 public class dartBehaviour : MonoBehaviour
 {
     [SerializeField] float closestRangeToDrop = 5f;
@@ -53,6 +53,17 @@ public class dartBehaviour : MonoBehaviour
             repel = false;
             GetComponent<ThrowObject>().state = ThrowObject.State.onGround;
             StateHandler.GetComponent<StateHandler>().AllBools["objectInHand"] = false;
+            StateHandler.GetComponent<StateHandler>().AllBools["arrowHitCount"] = (int)StateHandler.GetComponent<StateHandler>().AllBools["arrowHitCount"] + 1;
+            Debug.Log(StateHandler.GetComponent<StateHandler>().AllBools["arrowHitCount"]);
+            if (StateHandler.GetComponent<StateHandler>().AllBools["arrowHitCount"].Equals(3))
+            {
+                StateHandler.GetComponent<StateHandler>().AllBools["allArrowsHit"] = true;
+                Debug.Log("OPEN THE PORTAL, MORTALS");
+            }
+
+
+            Destroy(GetComponent<ThrowObject>());
+            Destroy(GetComponent<dartBehaviour>());
         }
     }
 }

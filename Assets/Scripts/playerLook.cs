@@ -31,7 +31,7 @@ public class playerLook : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xAxisClamp += mouseY;
+        /*xAxisClamp += mouseY;
 
         if(xAxisClamp > 90.0f)
         {
@@ -44,7 +44,7 @@ public class playerLook : MonoBehaviour
             xAxisClamp = -90.0f;
             mouseY = 0.0f;
             ClampXAxisRotationToValue(-90.0f);
-        }
+        }*/
 
         transform.Rotate(Vector3.left * mouseY);
         playerBody.Rotate(Vector3.up * mouseX);

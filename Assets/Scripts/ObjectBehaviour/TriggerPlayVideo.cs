@@ -7,14 +7,15 @@ using UnityEngine.Video;
 public class TriggerPlayVideo : MonoBehaviour
 {
     public GameObject targetObject;
-    GameObject StateHandler;
+    public VideoClip officeVideo;
+    GameObject stateHandler;
     private VideoPlayer videoPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         videoPlayer = targetObject.GetComponent<VideoPlayer>();
-        StateHandler = GameObject.Find("StateHandler");
+        stateHandler = GameObject.Find("StateHandler");
     }
 
     // Update is called once per frame
@@ -26,14 +27,19 @@ public class TriggerPlayVideo : MonoBehaviour
     private void OnTriggerEnter()
     {
         //targetObject.SendMessage("PlayVid");
+        if (videoPlayer.clip != officeVideo) videoPlayer.clip = officeVideo;
         videoPlayer.Play();
-        StateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = true;
+        stateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = true;
+        
+
     }
 
     private void OnTriggerExit()
     {
         //targetObject.SendMessage("StopVid");
-        if (videoPlayer.isPlaying) videoPlayer.Stop();
-        StateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = false;
+        if (videoPlayer.isPlaying) videoPlayer.Pause();
+        stateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = false;
+        stateHandler.GetComponent<StateHandler>().AllBools["pillsTaken"] = false;
+        
     }
 }

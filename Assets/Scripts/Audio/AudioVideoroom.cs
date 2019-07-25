@@ -28,13 +28,13 @@ public class AudioVideoroom : MonoBehaviour
             OnTriggerExit();
             audioFix = false;
         }
-        Debug.Log(inRoom);
         if (inRoom == true)
         {
-            randomNumber = Random.Range(0, 1000);
+            randomNumber = Random.Range(0, 500);
             if (randomNumber == 20)
             {
                  PlayRandomSound();
+                Debug.Log("Random Echo Sound Played");
             }
         }
     }
@@ -49,12 +49,14 @@ public class AudioVideoroom : MonoBehaviour
     {
         inRoom = true;
         Audio.PlayOneShot(Audio.clip);
+        Camera.main.fieldOfView = 120F;
     }
 
     private void OnTriggerExit()
     {
         inRoom = false;
         Audio.Stop();
+        Camera.main.fieldOfView = 60F;
     }
 
 }

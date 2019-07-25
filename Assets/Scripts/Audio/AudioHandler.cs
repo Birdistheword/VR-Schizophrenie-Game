@@ -20,7 +20,7 @@ public class AudioHandler : MonoBehaviour
 
     void Update()
     {
-        randomNumber = Random.Range(0, 150);
+        randomNumber = Random.Range(0, 200);
         if (randomNumber == 20)
         {
             PlayRandomSound();
