@@ -14,7 +14,6 @@ public class ToggleSetActive : MonoBehaviour
     {
 
         stateHandler = GameObject.Find("StateHandler");
-        Debug.Log("Setting Game Object to inactive");
         objectToSet.SetActive(false);
 
 

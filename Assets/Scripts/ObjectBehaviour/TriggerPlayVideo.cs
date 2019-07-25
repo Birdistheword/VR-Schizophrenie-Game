@@ -6,7 +6,8 @@ using UnityEngine.Video;
 
 public class TriggerPlayVideo : MonoBehaviour
 {
-    public GameObject targetObject, StateHandler;
+    public GameObject targetObject;
+    GameObject StateHandler;
     private VideoPlayer videoPlayer;
 
     // Start is called before the first frame update
@@ -24,7 +25,6 @@ public class TriggerPlayVideo : MonoBehaviour
 
     private void OnTriggerEnter()
     {
-        Debug.Log("Send Event PlayVid");
         //targetObject.SendMessage("PlayVid");
         videoPlayer.Play();
         StateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = true;
@@ -32,7 +32,6 @@ public class TriggerPlayVideo : MonoBehaviour
 
     private void OnTriggerExit()
     {
-        Debug.Log("Send Event PlayVid");
         //targetObject.SendMessage("StopVid");
         if (videoPlayer.isPlaying) videoPlayer.Stop();
         StateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = false;
