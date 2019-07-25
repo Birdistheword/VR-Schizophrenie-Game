@@ -5,20 +5,23 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioVideoroom : MonoBehaviour
 {
-    AudioClip[] randomAudios;
+    AudioClip voicesAudio, officeAudio, highAudio;
     AudioSource Audio;
+    GameObject stateHandler;
 
-    int randomNumber = 0;
     bool inRoom = false;
     bool audioFix = true;
 
     void Start()
     {
-
+        stateHandler = GameObject.Find("StateHandler");
         Audio = GetComponent<AudioSource>();
+        voicesAudio = Resources.Load<AudioClip>("Voices/voicesVideoRoom");
+        officeAudio = Resources.Load<AudioClip>("Audiofiles/OfficeAudio");
+        highAudio = Resources.Load<AudioClip>("Audiofiles/highAudio");
         // Load all Audio Clips
-        randomAudios = Resources.LoadAll<AudioClip>("Voices/EchoStimmen");
-        
+
+
     }
 
     void Update()
@@ -28,33 +31,33 @@ public class AudioVideoroom : MonoBehaviour
             OnTriggerExit();
             audioFix = false;
         }
-        if (inRoom == true)
+        SwitchAudioClip();
+    }
+
+    private void SwitchAudioClip()
+    {
+        if(stateHandler.GetComponent<StateHandler>().AllBools["pillsTaken"].Equals(true))
         {
-            randomNumber = Random.Range(0, 500);
-            if (randomNumber == 20)
-            {
-                 PlayRandomSound();
-                Debug.Log("Random Echo Sound Played");
-            }
+            Audio.clip = highAudio;
+        }
+        else if(stateHandler.GetComponent<StateHandler>().AllBools["pillsTaken"].Equals(false))
+        {
+            Audio.clip = officeAudio;
         }
     }
 
-    void PlayRandomSound()
-    {
-        Audio.PlayOneShot(randomAudios[Random.Range(0, randomAudios.Length)]);
-
-    }
 
     private void OnTriggerEnter()
     {
-        inRoom = true;
+
         Audio.PlayOneShot(Audio.clip);
+        Audio.PlayOneShot(voicesAudio);
         Camera.main.fieldOfView = 120F;
     }
 
     private void OnTriggerExit()
     {
-        inRoom = false;
+
         Audio.Stop();
         Camera.main.fieldOfView = 60F;
     }

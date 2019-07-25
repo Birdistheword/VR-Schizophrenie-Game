@@ -11,11 +11,13 @@ public class TriggerPlayVideo : MonoBehaviour
     GameObject stateHandler;
     private VideoPlayer videoPlayer;
 
+
     // Start is called before the first frame update
     void Start()
     {
         videoPlayer = targetObject.GetComponent<VideoPlayer>();
         stateHandler = GameObject.Find("StateHandler");
+        OnTriggerExit();
     }
 
     // Update is called once per frame
@@ -30,6 +32,11 @@ public class TriggerPlayVideo : MonoBehaviour
         if (videoPlayer.clip != officeVideo) videoPlayer.clip = officeVideo;
         videoPlayer.Play();
         stateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = true;
+
+        // Andere Stimmen aka. Audiohandler ausschalten
+
+
+
         
 
     }
@@ -40,6 +47,6 @@ public class TriggerPlayVideo : MonoBehaviour
         if (videoPlayer.isPlaying) videoPlayer.Pause();
         stateHandler.GetComponent<StateHandler>().AllBools["videoPlaying"] = false;
         stateHandler.GetComponent<StateHandler>().AllBools["pillsTaken"] = false;
-        
+
     }
 }
