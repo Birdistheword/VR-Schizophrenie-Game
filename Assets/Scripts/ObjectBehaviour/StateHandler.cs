@@ -29,10 +29,12 @@ public class StateHandler : MonoBehaviour
         AllBools.Add("pillsTaken", false);
         AllBools.Add("rightVideoWatched", false);
         AllBools.Add("taskFinished", false);
+        AllBools.Add("allThrown", false);
+        AllBools.Add("dartboardHitWindow", false);
         AllBools.Add("arrowHitCount", 0);
         AllBools.Add("allArrowsHit", false);
 
-        AllBools.Add("allThrown", false);
+       
 
 
     }

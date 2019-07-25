@@ -3505,7 +3505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &210329372
 MonoBehaviour:
@@ -5529,7 +5529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &375669736
 BoxCollider:
@@ -9400,6 +9400,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1504733650}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &672094540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672094542}
+  - component: {fileID: 672094541}
+  m_Layer: 0
+  m_Name: DEBUG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &672094541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672094540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4b3641a75780a4788d297c0f0d2bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolToSet: allArrowsHit
+--- !u!4 &672094542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672094540}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.307367, y: -1.4029431, z: -1.8563462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &675743449
 GameObject:
   m_ObjectHideFlags: 0
@@ -25883,6 +25927,7 @@ GameObject:
   - component: {fileID: 1774076574}
   - component: {fileID: 1774076573}
   - component: {fileID: 1774076577}
+  - component: {fileID: 1774076578}
   m_Layer: 0
   m_Name: DartScheibeAnim
   m_TagString: Untagged
@@ -25995,6 +26040,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateToCheck: allArrowsHit
   animationName: DartBreakGlass
+--- !u!114 &1774076578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774076571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47625de3c751bb549949f591b054929d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boolToSet: dartboardHitWindow
 --- !u!65 &1781374101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56026,6 +56084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyedVersion: {fileID: 7498353318541242023, guid: d599561f69dfd4149805581d64270a56,
     type: 3}
+  stateToCheck: dartboardHitWindow
 --- !u!54 &7585872645032201911
 Rigidbody:
   m_ObjectHideFlags: 0
