@@ -32,6 +32,9 @@ public class StateHandler : MonoBehaviour
         AllBools.Add("arrowHitCount", 0);
         AllBools.Add("allArrowsHit", false);
 
+        AllBools.Add("allThrown", false);
+
+
     }
 
 }
