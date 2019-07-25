@@ -29,6 +29,9 @@ public class StateHandler : MonoBehaviour
         AllBools.Add("pillsTaken", false);
         AllBools.Add("taskFinished", false);
 
+        AllBools.Add("allThrown", false);
+
+
     }
 
 }
