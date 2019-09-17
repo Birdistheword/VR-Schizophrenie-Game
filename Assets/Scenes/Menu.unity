@@ -477,5 +477,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5007454151478304207, guid: 14c5c08d07b3d5a40a85b4b481ee1d85,
+        type: 3}
+      propertyPath: m_text
+      value: "Bewegen - \"WASD\"\nSchrankt\xFCren \xF6ffnen  - \"1\"\nSchrankt\xFCren
+        schlie\xDFen - \"2\"\nAufnehmen/Ablegen -  \"E\"\nMen\xFC aufrufen - \"ESCAPE\"\n"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14c5c08d07b3d5a40a85b4b481ee1d85, type: 3}

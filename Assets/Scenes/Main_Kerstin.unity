@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb22133f78a6de345b0ff08a0a363b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closestRangeToDrop: 3
+  closestRangeToDrop: 2
   target: {fileID: 1774076571}
 --- !u!114 &44908124
 MonoBehaviour:
@@ -3055,6 +3055,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007454151478304207, guid: 14c5c08d07b3d5a40a85b4b481ee1d85,
+        type: 3}
+      propertyPath: m_text
+      value: "Bewegen - \"WASD\"\nSchrankt\xFCren \xF6ffnen  - \"1\"\nSchrankt\xFCren
+        schlie\xDFen - \"2\"\nAufnehmen/Ablegen -  \"E\"\nMen\xFC aufrufen - \"ESCAPE\"\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14c5c08d07b3d5a40a85b4b481ee1d85, type: 3}
@@ -13348,7 +13354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb22133f78a6de345b0ff08a0a363b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closestRangeToDrop: 3
+  closestRangeToDrop: 2
   target: {fileID: 1774076571}
 --- !u!65 &913596731
 BoxCollider:
@@ -17186,7 +17192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb22133f78a6de345b0ff08a0a363b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closestRangeToDrop: 3
+  closestRangeToDrop: 2
   target: {fileID: 1774076571}
 --- !u!114 &1125203990
 MonoBehaviour:
