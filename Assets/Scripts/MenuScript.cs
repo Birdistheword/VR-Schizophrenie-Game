@@ -33,6 +33,7 @@ public class MenuScript : MonoBehaviour
         menu.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         gameIsActive = true;
     }
 }
