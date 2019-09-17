@@ -14,6 +14,9 @@ public class playerLook : MonoBehaviour
     {
         LockCursor();
         xAxisClamp = 0.0f;
+        //Fix für Mouse Cursor
+
+        Cursor.visible = false;
     }
 
     private void LockCursor()
